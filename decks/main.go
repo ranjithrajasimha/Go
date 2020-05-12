@@ -1,18 +1,17 @@
 package main
 
-import "fmt"
-
 func main() {
 	// var card string = "Ace of Spades"
-	cards := []string{"Ace of Diamonds", NewCard()}
-	cards = append(cards,"Six of Spades")
+	cards := newDeckFromFile("Deck.txt")
 
-	for index, card := range cards {
-		fmt.Println(index, card)
-	}
+	cards.shuffle()
+	cards.print()
+	// hand, remaining_deck := deal(cards, 5)
+
+	// hand.print()
+	// remaining_deck.print()
+
+	// cards.saveToFile("Deck.txt")
+
 	
-}
-
-func NewCard() string {
-	return "Ace of Hearts"
 }
